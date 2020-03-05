@@ -141,10 +141,15 @@ h3 {
 .header-nav .inner ul li:hover,
 .works .item img:hover,
 .works .item h2:hover,
-.submit:hover,
-.floating:hover {
+.submit:hover {
 	opacity: .6;
 	cursor: pointer;
+}
+.only-pc {
+	display: block;
+}
+.only-sp {
+	display: none;
 }
 
 
@@ -152,21 +157,25 @@ h3 {
 ヘッダー
 =======================================*/
 .head-wrap {
-    width: 100%;
-    height: 100px;
-    padding-top: 18px;
+	width: 100%;
+	height: 97px;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px #000;
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-	background: #fff;
 	z-index: 100;
+	transition: all 0.3s ease 0s;
 }
-.head-wrap .inner {
+.head-wrap > header > .inner {
 	max-width: 1100px;
 	margin: 0 auto;
-	padding: 0 30px;
+	padding: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .head-wrap .inner h1 {
 	margin-bottom: 5px;
@@ -180,7 +189,7 @@ h3 {
 }
 .header-nav .inner ul li {
 	margin: 0 10px;
-	transition: .3s;
+	transition: all 0.3s ease 0s;
 }
 .header-nav .inner ul li:first-of-type {
 	margin-left: 0;
@@ -189,6 +198,13 @@ h3 {
 	margin-right: 0;
 }
 
+/* スクロールで固定 */
+.header-scroll {
+	color: #333;
+	background: #fff;
+	text-shadow: none;
+	box-shadow: 0px 3px 6px #00000029;
+}
 
 /*=======================================
 コンテンツ
@@ -204,7 +220,7 @@ h3 {
 .content .inner {
     display: flex;
     justify-content: space-around;
-	margin: 50px 0 0;
+	margin: 40px 0 0;
 	width: 100%;
 }
 
@@ -244,11 +260,11 @@ Works
 =======================================*/
 .works .item img {
 	width: 80%;
-	transition: .3s;
+	transition: all 0.3s ease 0s;
 }
 .works .item h2 {
-	margin: 10px 0;
-	transition: .3s;
+	margin: 20px 0 10px;
+	transition: all 0.3s ease 0s;
 }
 
 
@@ -260,10 +276,10 @@ Contact
 	margin: 0 auto;
 }
 .contact .title h1 {
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 .contact .title p {
-	text-align: left;
+	text-align: center;
 }
 .form_cont {
 	width: 600px;
@@ -291,11 +307,12 @@ textarea {
 	height: 100px;
 }
 .submit {
+	font-family: "Hiragino Mincho Pro", "Yu Mincho Light", "YuMincho", "游明朝体", serif;
 	padding: 10px 30px;
 	font-size: 16px;
 	background-color: #ddd;
 	border: none;
-	transition: .3s;
+	transition: all 0.3s ease 0s;
 }
 
 
@@ -324,8 +341,9 @@ textarea {
     text-align: center;
     padding-top: 30px;
 	color: #fff;
-	transition: .3s;
+	transition: all 0.3s ease 0s;
 	z-index: 100;
+	box-shadow: 0px 3px 6px #00000029;
 }
 .floating:before {
     content: '';
@@ -341,22 +359,41 @@ textarea {
     top: 25%;
     left: 40%;
 }
+.floating:hover {
+	transform: translateY(-10px);
+	cursor: pointer;
+}
 
 
 @media (max-width: 768px) {
 	/*=======================================
 	共通設定
 	=======================================*/
+	.only-pc {
+		display: none;
+	}
+	.only-sp {
+		display: block;
+	}
 
 
 	/*=======================================
 	ヘッダー
 	=======================================*/
-	
+	.head-wrap {
+		height: 109px;
+	}
+	.head-wrap > header > .inner {
+		display: block;
+		padding: 20px 30px;
+	}
 
 	/*=======================================
 	コンテンツ
 	=======================================*/
+	.content {
+		padding: 50px 0 0;
+	}
 	.content .inner {
 		display: block;
 		margin: 30px auto 0;
