@@ -54,7 +54,7 @@ $(function () {
 */
 $(function(){
     var imgHeight = 100; //画像の高さを取得。これがイベント発火位置になる。
-    var header = $('.head-wrap'); //ヘッダーコンテンツ
+    var header = $('#head-wrap'); //ヘッダーコンテンツ
   
     $(window).on('load scroll', function(){
        if ($(window).scrollTop() < imgHeight) {
@@ -66,8 +66,3 @@ $(function(){
        }
     });
 });
-
-
-/*
-* メニューにアクティブつける
-*/
